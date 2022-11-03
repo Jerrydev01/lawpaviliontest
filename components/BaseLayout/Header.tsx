@@ -101,7 +101,7 @@ const Header = () => {
     <section className="fixed w-full z-[50]">
       <section className="relative py-6 z-40 bg-white w-full">
         <nav className="container py-6 flex justify-between items-center">
-          <ul className="flex gap-8 uppercase">
+          <ul className="flex lg:gap-8 gap-4 uppercase">
             {links.map((link) => {
               return (
                 <li key={link.id}>
@@ -163,7 +163,7 @@ const Header = () => {
             onClick={() => setShow(!show)}
             className="fixed top-0 right-0 bottom-0 left-0 bg-[#37374987]  z-10"
           ></div>
-          <div className="relative mt-10 -translate-y-10 float-right -translate-x-[8rem] z-20 bg-white px-4 text-left py-3">
+          <div className="relative mt-10 -translate-y-10 float-right xl:-translate-x-[8rem] z-20 bg-white px-4 text-left py-3">
             <CartModal />
           </div>
         </>

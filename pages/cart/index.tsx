@@ -82,7 +82,7 @@ const Index = () => {
   return (
     <div className=" container ">
       <h3 className="pt-20 flex gap-2">
-        <span className="font-bold text-[2.5rem]">CART</span>
+        <span className="font-bold lg:text-[2.5rem] text-[2rem]">CART</span>
         {/* <span className="">
           {cartItems.length > 0 ? (
             <>
@@ -105,10 +105,10 @@ const Index = () => {
             return (
               <article
                 key={item.id}
-                className="flex justify-between gap-3 my-4 border-t pt-5 items-baseline"
+                className="flex flex-col-reverse md:flex-row justify-between gap-3 my-4 border-t pt-5 items-baseline"
               >
                 <div className="">
-                  <div className="">
+                  <div className="w-full">
                     <h3 className="font-[300] text-[1.875rem] pt-4">
                       {" "}
                       <span className=" font-bold">
@@ -209,7 +209,10 @@ const Index = () => {
                     </button>
                   </div>
                   {/* how to create custom swiper navigation */}
-                  <Link href={`${item.id}`} className="w-[180px] relative">
+                  <Link
+                    href={`${item.id}`}
+                    className="lg:w-[180px] w-[300px] relative "
+                  >
                     <Swiper
                       spaceBetween={30}
                       centeredSlides={true}
@@ -313,10 +316,10 @@ const Index = () => {
               </span>
             </h3>
           </div>
-          <div className="flex text-center justify-between pr-5 gap-3 w-fit pb-10">
+          <div className="text-center justify-between gap-3 lg:w-fit pb-10">
             <button
               onClick={handleShowModal}
-              className="uppercase w-full text-white bg-[#5ECE7B] px-20 py-2"
+              className="uppercase w-full text-white bg-[#5ECE7B] px-20 lg:py-2 py-3"
             >
               ORDER
             </button>
@@ -327,7 +330,7 @@ const Index = () => {
                   className="fixed top-0 right-0 bottom-0 left-0 bg-[#37374987]  z-10"
                 ></div>
                 {/* how to center a div */}
-                <div className="absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 bg-white  flex flex-col gap-3 justify-center items-center ">
+                <div className="absolute lg:top-[60%] top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 bg-white  flex flex-col gap-3 justify-center items-center ">
                   <Paystack />
                 </div>
               </>
@@ -335,7 +338,7 @@ const Index = () => {
           </div>
         </article>
       ) : (
-        <div className="pt-7 px-5 flex m-auto justify-center items-center text-[3rem] font-bold mt-20">
+        <div className="pt-7 px-5 flex m-auto justify-center items-center lg:text-[3rem] text-[2.5rem] font-bold mt-20">
           {" "}
           Your Cart is Empty
         </div>

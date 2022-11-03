@@ -24,8 +24,9 @@ a {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 50px;
+  padding: 0 20px;
 }
+
 
 .text-color-primary {
   color: #5ece7b;

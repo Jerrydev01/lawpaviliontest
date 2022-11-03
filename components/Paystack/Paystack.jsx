@@ -39,7 +39,7 @@ const Paystack = () => {
         <div className="w-full max-w-xs text-left">
           <form
             onSubmit={handlePay}
-            className="bg-white shadow-md px-8 pt-6 pb-8  rounded-sm"
+            className="bg-white shadow-md px-8 pt-6 pb-8  rounded-sm w-[18.75rem]"
           >
             <div className="mb-4">
               <label

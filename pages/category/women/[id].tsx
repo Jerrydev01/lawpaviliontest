@@ -3,9 +3,7 @@ import { products } from "../../../libs/data";
 import Image from "next/legacy/image";
 import { formatMoney } from "../../../utils/utils";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  addToCart,
-} from "../../../store/features/productSlice";
+import { addToCart } from "../../../store/features/productSlice";
 
 const WomenProducts = ({ product }: any) => {
   // const { cartItems } = useSelector((state: any) => state.productArray);
@@ -98,12 +96,13 @@ const WomenProducts = ({ product }: any) => {
       {product.map((item: any) => {
         return (
           <div className=" pb-14 pt-20" key={item.id}>
-            <article className="flex pt-14 lg:flex-row gap-8 flex-col-reverse">
-              <div className="flex lg:flex-col  xl:gap-[19px] gap-[12px]">
-                {product[0].image.map((item: any, i: number) => (
-                  <div key={i} className="w-[85px] xl:h-[85px] lg:h-[92px] ">
+            <article className="flex pt-14 lg:flex-row gap-8 flex-col ">
+              <div className="flex lg:flex-row flex-col-reverse  xl:gap-[19px] gap-[12px]">
+                <div className="flex lg:flex-col gap-6 flex-row ">
+                  {product[0].image.map((item: any, i: number) => (
                     <div
-                      className={`rounded-[3px]  ${
+                      key={i}
+                      className={`rounded-[3px]  h-[85px] w-[85px] xl:h-[85px] lg:h-[92px] ${
                         colorIsActive === item
                           ? "border-[0.6px] border-[#081658]"
                           : ""
@@ -121,20 +120,20 @@ const WomenProducts = ({ product }: any) => {
                         className="cursor-pointer"
                       />
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+                <div className="xl:w-[530px] lg:w-[500px] w-full">
+                  <Image
+                    className="rounded-[3px]"
+                    src={image}
+                    alt="product"
+                    objectFit="cover"
+                    layout="responsive"
+                  />
+                </div>
               </div>
-              <div className="xl:w-[530px] lg:w-[500px] w-full">
-                <Image
-                  className="rounded-[3px]"
-                  src={image}
-                  alt="product"
-                  objectFit="cover"
-                  layout="responsive"
-                />
-              </div>
-              <div className="w-[35%]">
-                <div className="pl-5">
+              <div className="lg:w-[35%]">
+                <div className="lg:pl-5">
                   {/* how to style a string of length 5 */}
                   <h3 className="text-[1.875rem]">
                     <span className="font-semibold">
@@ -146,7 +145,7 @@ const WomenProducts = ({ product }: any) => {
                     </span>
                   </h3>
                 </div>
-                <div className="pl-5 mt-5">
+                <div className="lg:pl-5 mt-5">
                   <div className="">
                     <h3 className="flex gap-4 font-bold">
                       SIZE: <span>{size}</span>{" "}

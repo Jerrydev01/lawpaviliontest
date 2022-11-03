@@ -16,13 +16,13 @@ import Paystack from "../Paystack/Paystack";
 const CartModal = () => {
   const { cartItems } = useSelector((state: any) => state.product);
   const publicKey = "pk_test_d952a1215d7aa35e20067bf8b846345ea0495602";
-  const amount = parseInt('');
+  const amount = parseInt("");
 
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
   const [colorIsActive, setColorIsActive] = useState<string>("");
   const [sizeIsActive, setSizeIsActive] = useState<string>("");
-  const [show, setShow]= useState(false)
+  const [show, setShow] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -73,7 +73,7 @@ const CartModal = () => {
   // how to make each color dynamic in each cart
 
   return (
-    <article className="">
+    <article className="relative w-full">
       <div className="overflow-auto max-h-[30rem]">
         <h3 className="flex gap-2">
           <span className="font-bold">My Bag,</span>
@@ -99,7 +99,7 @@ const CartModal = () => {
               return (
                 <article
                   key={item.id}
-                  className="flex items-baseline justify-between gap-8 my-4"
+                  className="flex lg:flex-row flex-col items-baseline justify-between gap-8 my-4"
                 >
                   <div className="">
                     <div className="">
@@ -235,16 +235,16 @@ const CartModal = () => {
                 )}
               </h3>
             </div>
-            <div className="flex text-center justify-between pr-5 gap-3 ">
+            <div className="flex flex-col lg:flex-row text-center justify-between pr-5 gap-3 ">
               <Link
                 href="/cart"
-                className="px-4 py-3 w-full uppercase border border-[#1D1F22]"
+                className="px-4 py-3 mb-2 w-full uppercase border border-[#1D1F22]"
               >
                 View bag
               </Link>
               <button
                 onClick={handleShowModal}
-                className="uppercase w-full text-white bg-[#5ECE7B]"
+                className="uppercase w-full text-white bg-[#5ECE7B] py-3 mb-2"
               >
                 CHECK OUT
               </button>
@@ -254,18 +254,20 @@ const CartModal = () => {
           <div className="pt-7 px-5"> Your Cart is Empty</div>
         )}
       </div>
+      <div className="">
         {show ? (
           <>
             <div
               onClick={() => setShow(!show)}
               className="fixed top-0 right-0 bottom-0 left-0 bg-[#37374987]  z-10"
             ></div>
-            {/* how to center a div */}
-            <div className="absolute top-[60%] right-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 bg-white  flex flex-col gap-3 justify-center items-center ">
+            {/* how to center a div for mobile */}
+            <div className="m-auto grid place-items-center fixed z-20 top-[30%] lg:-translate-x-[80%] -translate-x-[33%] md:-translate-x-[90%]  ">
               <Paystack />
             </div>
           </>
         ) : null}
+      </div>
     </article>
   );
 };
