@@ -110,7 +110,7 @@ const CartModal = () => {
                         </span>
                         <br />
                         <span className="font-[400]">
-                          {item.name.slice(6, item.name.length)}
+                          {item.name.slice(7, item.name.length)}
                         </span>
                       </h3>
                       <p className="font-semibold py-2">
