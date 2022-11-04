@@ -68,6 +68,11 @@ const Header = () => {
     setActive(router.pathname);
   }, [router]);
 
+
+  // const handleCurrency = (item: any) => {
+  //   setCurrency(item);
+  // };
+
   // change currency state
   const changeCurrency = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedCurrency = e.target.value;
