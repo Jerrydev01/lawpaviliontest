@@ -210,7 +210,7 @@ const Index = () => {
                   </div>
                   {/* how to create custom swiper navigation */}
                   <Link
-                    href={`${item.id}`}
+                    href={`category/${item.pages}/${item.id}`}
                     className="lg:w-[180px] w-[300px] relative "
                   >
                     <Swiper
