@@ -7,10 +7,13 @@ export interface productState {
 }
 //  cookies  defined in next js
 
+// const initialState: productState = {
+//   cartItems: Cookies.get("cartItems")
+//     ? JSON.parse(Cookies.get("cartItems")!)
+//     : [],
+// };
 const initialState: productState = {
-  cartItems: Cookies.get("cartItems")
-    ? JSON.parse(Cookies.get("cartItems")!)
-    : [],
+  cartItems: [],
 };
 
 // localstorage in reduxjs
