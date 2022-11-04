@@ -64,7 +64,7 @@ export const productSlice = createSlice({
         );
       }
 
-      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+     Cookies.set("cartItems", JSON.stringify(state.cartItems));
     },
   },
 });
