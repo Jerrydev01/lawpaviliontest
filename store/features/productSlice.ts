@@ -33,7 +33,7 @@ export const productSlice = createSlice({
         });
       }
 
-     Cookies.set("cartItems", JSON.stringify(state.cartItems));
+      Cookies.set("cartItems", JSON.stringify(state.cartItems));
     },
     decreaseFromCart: (state, action) => {
       const product = action.payload;
@@ -49,7 +49,7 @@ export const productSlice = createSlice({
         }
       }
 
-    Cookies.set("cartItems", JSON.stringify(state.cartItems));
+      Cookies.set("cartItems", JSON.stringify(state.cartItems));
     },
 
     //  remove item from cart
@@ -63,8 +63,6 @@ export const productSlice = createSlice({
           (item: any) => item.id !== product.id
         );
       }
-
-     Cookies.set("cartItems", JSON.stringify(state.cartItems));
     },
   },
 });
