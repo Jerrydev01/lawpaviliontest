@@ -263,7 +263,7 @@ const Index = () => {
                   >
                     <AiOutlineDelete />
                   </button>
-                  <div className="text-white flex gap-2 absolute  bottom-5 z-20 right-5">
+                  <div className="text-white flex gap-2 absolute  bottom-5 z-10 right-5">
                     <div className="swiper-button-prev cursor-pointer p-1 bg-black h-fit">
                       <AiOutlineLeft />
                     </div>
