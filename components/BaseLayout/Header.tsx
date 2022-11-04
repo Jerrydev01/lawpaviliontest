@@ -68,7 +68,6 @@ const Header = () => {
     setActive(router.pathname);
   }, [router]);
 
-
   // const handleCurrency = (item: any) => {
   //   setCurrency(item);
   // };
@@ -130,16 +129,18 @@ const Header = () => {
           </Link>
           <div className="flex gap-3 items-center">
             <div className="">
+              {/* gow to style select input */}
               <select
-                className="bg-transparent border-none focus:outline-none"
+                className="bg-transparent border-none focus:outline-none py-2"
                 name="currency"
                 id="currency"
                 onChange={changeCurrency}
               >
                 {currency.map((item) => {
                   return (
+                    //  {/* gow to style select option from blue*/}
                     <option
-                      className="py-2"
+                      className=" px-3 border-none focus:outline-none bg-white text-[#1F2937] py-10 mt-2"
                       key={item.id}
                       value={item.currency}
                     >
