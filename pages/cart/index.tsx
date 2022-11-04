@@ -330,7 +330,7 @@ const Index = () => {
                   className="fixed top-0 right-0 bottom-0 left-0 bg-[#37374987]  z-10"
                 ></div>
                 {/* how to center a div */}
-                <div className="absolute lg:top-[60%] top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 bg-white  flex flex-col gap-3 justify-center items-center ">
+                <div className="fixed lg:top-[60%] top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 bg-white  flex flex-col gap-3 justify-center items-center ">
                   <Paystack />
                 </div>
               </>
