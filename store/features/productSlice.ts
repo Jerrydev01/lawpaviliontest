@@ -4,10 +4,6 @@ import Cookies from "js-cookie";
 
 export interface productState {
   cartItems: any[];
-  currency: {
-    id: number;
-    name: string;
-  }[];
 }
 //  cookies  defined in next js
 
@@ -18,23 +14,7 @@ export interface productState {
 // };
 const initialState: productState = {
   cartItems: [],
-  currency: [
-    {
-      id: 1,
-      name: "NGN",
-    },
-    {
-      id: 2,
-      name: "USD",
-    },
-    {
-      id: 3,
-      name: "EUR",
-    },
-  ],
 };
-
-// how to glabally change currency using redux
 
 // localstorage in reduxjs
 
@@ -87,30 +67,11 @@ export const productSlice = createSlice({
         );
       }
     },
-    // how to convert currency
-    // 
-    changeCurrencies: (state, action: PayloadAction<number>) => {
-      //   const currency = action.payload;
-      //   state.currency = currency;
-      state.currency = state.currency.map((currency) => {
-        if (currency.id === action.payload) {
-          return {
-            ...currency,
-            selected: true,
-          };
-        } else {
-          return {
-            ...currency,
-            selected: false,
-          };
-        }
-      });
-    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addToCart, decreaseFromCart, removeFromCart, changeCurrencies } =
+export const { addToCart, decreaseFromCart, removeFromCart } =
   productSlice.actions;
 
 export default productSlice.reducer;
