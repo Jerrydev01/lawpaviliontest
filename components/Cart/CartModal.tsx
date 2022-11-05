@@ -238,6 +238,7 @@ const CartModal = () => {
             <div className="flex flex-col lg:flex-row text-center justify-between pr-5 gap-3 ">
               <Link
                 href="/cart"
+                onClick={()=> setShow(!show)}
                 className="px-4 py-3 mb-2 w-full uppercase border border-[#1D1F22]"
               >
                 View bag
