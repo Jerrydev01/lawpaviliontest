@@ -202,7 +202,7 @@ const CartModal = () => {
                         -
                       </button>
                     </div>
-                    <Link href={`${item.id}`} className="w-[180px] relative">
+                    <Link href={`/category/${item.pages}/${item.id}`} className="w-[180px] relative">
                       <Image
                         src={item.imageUrl}
                         alt={item.name}
