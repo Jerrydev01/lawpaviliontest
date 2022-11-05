@@ -77,7 +77,11 @@ const Index = () => {
     }
   };
 
-  // how to make each color dynamic in each cart
+  const totalPrice = cartItems.reduce(
+    (accumulator: number, currentValue: any) =>
+      accumulator + currentValue.price * currentValue.quantity,
+    0
+  );
 
   return (
     <div className=" container ">
@@ -304,22 +308,13 @@ const Index = () => {
             </h3>
             <h3 className="">
               Total:{" "}
-              <span className="pr-5 font-bold">
-                {" "}
-                {formatMoney(
-                  cartItems.reduce(
-                    (total: any, item: any) =>
-                      total + item.quantity * item.price,
-                    0
-                  )
-                )}
-              </span>
+              <span className="pr-5 font-bold"> {formatMoney(totalPrice)}</span>
             </h3>
           </div>
           <div className="text-center justify-between gap-3 lg:w-fit pb-10">
             <button
               onClick={handleShowModal}
-              className="uppercase w-full text-white bg-[#5ECE7B] px-20 lg:py-2 py-3"
+              className="uppercase w-full text-white bg-[#5ECE7B] hover:bg-black duration-200 px-20 lg:py-2 py-3"
             >
               ORDER
             </button>

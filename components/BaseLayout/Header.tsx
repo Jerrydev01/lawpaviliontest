@@ -68,10 +68,6 @@ const Header = () => {
     setActive(router.pathname);
   }, [router]);
 
-  // const handleCurrency = (item: any) => {
-  //   setCurrency(item);
-  // };
-
   // change currency state
   const changeCurrency = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedCurrency = e.target.value;
@@ -105,7 +101,7 @@ const Header = () => {
     <section className="fixed w-full z-[50]">
       <section className="relative py-6 z-40 bg-white w-full">
         <nav className="container py-6 flex justify-between items-center">
-          <ul className="flex lg:gap-8 gap-4 uppercase">
+          <ul className="flex gap-8 uppercase">
             {links.map((link) => {
               return (
                 <li key={link.id}>
@@ -129,18 +125,16 @@ const Header = () => {
           </Link>
           <div className="flex gap-3 items-center">
             <div className="">
-              {/* gow to style select input */}
               <select
-                className="bg-transparent border-none focus:outline-none py-2"
+                className="bg-transparent border-none focus:outline-none"
                 name="currency"
                 id="currency"
                 onChange={changeCurrency}
               >
                 {currency.map((item) => {
                   return (
-                    //  {/* gow to style select option from blue*/}
                     <option
-                      className=" px-3 border-none focus:outline-none bg-white text-[#1F2937] py-10 mt-2"
+                      className="py-2"
                       key={item.id}
                       value={item.currency}
                     >
@@ -169,7 +163,7 @@ const Header = () => {
             onClick={() => setShow(!show)}
             className="fixed top-0 right-0 bottom-0 left-0 bg-[#37374987]  z-10"
           ></div>
-          <div className="relative mt-10 -translate-y-10 float-right xl:-translate-x-[8rem] z-20 bg-white px-4 text-left py-3">
+          <div className="relative mt-10 -translate-y-10 float-right -translate-x-[8rem] z-20 bg-white px-4 text-left py-3">
             <CartModal />
           </div>
         </>

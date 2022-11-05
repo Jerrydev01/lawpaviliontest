@@ -17,7 +17,8 @@ const Women = () => {
 
   return (
     <article>
-      <article className="grid lg:grid-cols-3 grid-cols-2 lg:gap-[40px] gap-3 gap-y-11 py-10">
+     
+      <article className="grid grid-cols-3 gap-[40px] gap-y-11 py-10">
         {products.women.map((product) => {
           return (
             <div

@@ -70,6 +70,13 @@ const CartModal = () => {
     }
   };
 
+  const totalPrice = cartItems.reduce(
+    (total: any, item: any) => total + item.quantity * item.price,
+    0
+  );
+
+  //refactor this whole code
+
   // how to make each color dynamic in each cart
 
   return (
@@ -224,16 +231,7 @@ const CartModal = () => {
 
             <div className="flex justify-between items-center font-rob font-semibold py-5">
               <h3 className="">Total</h3>
-              <h3 className="pr-5">
-                {" "}
-                {formatMoney(
-                  cartItems.reduce(
-                    (total: any, item: any) =>
-                      total + item.quantity * item.price,
-                    0
-                  )
-                )}
-              </h3>
+              <h3 className="pr-5"> {formatMoney(totalPrice)}</h3>
             </div>
             <div className="flex flex-col lg:flex-row text-center justify-between pr-5 gap-3 ">
               <Link
